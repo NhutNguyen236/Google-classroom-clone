@@ -1,0 +1,19 @@
+
+  .topnav a {
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  .topnav a:hover {
+    background-color: rgb(62, 62, 63);
+    color: rgb(255, 255, 255);
+  }
+ .topnav{
+   margin:auto;
+ }
+.statusByTeacher{
+  text-decoration: none;
+ 
+}

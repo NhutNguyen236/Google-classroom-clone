@@ -1,0 +1,163 @@
+
+.modal-dialog-full-width {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width:none !important;
+
+}
+
+.modal-content-full-width  {
+  height: auto !important;
+  min-height: 100% !important;
+  border-radius: 0 !important;
+  background-color: #ececec !important 
+}
+
+.modal-header-full-width  {
+  border-bottom: 1px solid #9ea2a2 !important;
+}
+
+.modal-footer-full-width  {
+  border-top: 1px solid #9ea2a2 !important;
+}
+.content{
+  padding:30px;
+}
+.close{
+margin-right: 10px;
+margin-bottom: 8px;
+color: white;
+}
+.avatar{
+  font-size: 35px;
+  margin-bottom: 5px;
+}
+.Join{
+  font-size: 35px;
+  margin-right: 20px;
+  color:rgb(255, 255, 255);
+  margin-bottom: 5px;
+
+}
+.Join:hover{
+  color: silver;
+}
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: #00cfeb;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    color:red;
+  }
+  
+  .openbtn:hover {
+    background-color:silver;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+  .container-fluid{
+      margin-top: 20px;
+  }
+  .cel{
+    margin-top: 20px;
+  }
+  .card-img{
+    
+    height: 230px;
+    width: 800px;
+  }
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  .modal_FormCreateClass {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  .modal-content1 {
+    background-color: #ffffff;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 35%; /* Could be more or less, depending on screen size */
+  }
+  /* Nội dung from Tạo lớp học*/
+  .btn_CreateClass{
+    padding: 10px 20px;
+    border:none;
+
+  }
+  .cancelbtn {
+    padding: 10px 20px;
+    background-color: #f44336;
+    border:none;
+  }
+  .cancelbtn, .btn_CreateClass {
+    float: left;
+    width: 50%;
+  }
+  .cancelbtn:hover,.btn_CreateClass:hover {
+    background-color: rgb(10, 197, 230);
+    opacity: 0.8;
+  }
+  .container {
+    padding: 16px;
+  }
+  .iConDropdown{
+    margin-left: 20px;
+  }
+  
