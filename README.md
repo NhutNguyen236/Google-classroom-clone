@@ -10,4 +10,4 @@
 * Framework I used: Boostrap 4
 
 ## Release day
-31/11/2020 :bicyclist:
+2/12/2020 :bicyclist:
