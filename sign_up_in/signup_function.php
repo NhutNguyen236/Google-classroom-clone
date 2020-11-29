@@ -10,14 +10,37 @@
     $phone = $_POST['PhoneNumber'];
     $role = $_POST['role'];
 
-    $sql = "INSERT INTO `users` (`user_id`, `username`, `password`, `fullname`, `birthdate`, `email`, `phone`, `role`) 
-    VALUES (NULL, '$username', '$password', '$fullname', '$birth', '$email', '$phone', '$role');";
-			
-    if($connection->query($sql) === true){
-        echo "User added";
+    // Message to inform what error should be
+    $message = "";
+
+    // check if user is here or not so we can add new user with no overlapping situation
+    $user_check_query = "SELECT * FROM users WHERE `username`='$username' OR `email`='$email' LIMIT 1";
+    $result = mysqli_query($connection, $user_check_query);
+    $user = mysqli_fetch_assoc($result);
+    
+    if ($user) { // if user exists
+        if ($user['username'] === $username) {
+            $message = "Username already exists" ;
+            echo $message;
+        }
+
+        else if ($user['email'] === $email) {
+            $message = "Email already exists";
+            echo $message;
+        }
     }
+
     else{
-        echo "Error: " . $sql . "<br>" . $connection->error;
-        $connection->close();
+        $sql = "INSERT INTO `users` (`user_id`, `username`, `password`, `fullname`, `birthdate`, `email`, `phone`, `role`) 
+        VALUES (NULL, '$username', '$password', '$fullname', '$birth', '$email', '$phone', '$role');";
+                
+        if($connection->query($sql) === true){
+            echo "User added";
+        }
+        else{
+            echo "Error: " . $sql . "<br>" . $connection->error;
+            $connection->close();
+        }
     }
+
 ?>
