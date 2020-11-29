@@ -7,8 +7,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style_request2.css">
-    <script src="Collapse_sidebar.js"></script>
+    <link rel="stylesheet" href="./css/style_request2.css">
+    <script src="./js/Collapse_sidebar.js"></script>
    
     <title>Document</title>
 </head>
@@ -25,6 +25,9 @@
 	
 	@media screen and (min-width:992px){
 		.col-4item{
+
+
+
 			-ms-flex:0 0 25%;
 			flex:0 0 25%;
 			max-width:25%;
@@ -38,10 +41,6 @@
 			max-width:20%;
 		}
 	}
-	
-	
-	
-	
 	
 </style>
 <body>
