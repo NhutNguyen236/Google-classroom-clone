@@ -14,8 +14,8 @@
 - [ ] Login - Logout - Signup - Forgot password
   - [x] Login
   - [x] Signup
-  - [x] Forgot password - 
-  - [ ] Password reset email 
+  - [x] Forgot password 
+  - [x] Password reset email - But no password update yet
 - [ ] User privileges 
   - [ ] Admin
   - [ ] Teacher
