@@ -21,5 +21,9 @@
 - [ ] Neptune
 - [ ] Comet Haley
 
+## Localhost used
+* [XAMPP](https://www.apachefriends.org/download.html) 
+
 ## Release day
 2/12/2020 :bicyclist:
+
