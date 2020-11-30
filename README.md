@@ -9,5 +9,17 @@
 * The project will focus on everything required in [`description.pdf`](description.pdf)
 * Framework I used: Boostrap 4
 
+## Project backlog
+
+- [ ] Mercury
+- [x] Venus
+- [x] Earth (Orbit/Moon)
+- [x] Mars
+- [ ] Jupiter
+- [ ] Saturn
+- [ ] Uranus
+- [ ] Neptune
+- [ ] Comet Haley
+
 ## Release day
 2/12/2020 :bicyclist:
