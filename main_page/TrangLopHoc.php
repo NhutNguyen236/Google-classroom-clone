@@ -1,3 +1,8 @@
+<?php
+   // Start a session to see what will happen on login
+   session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +15,7 @@
     <link rel="stylesheet" href="./css/style_request2.css">
     <script src="./js/Collapse_sidebar.js"></script>
    
-    <title>Document</title>
+    <title>Class</title>
 </head>
 
 <style>
@@ -44,7 +49,10 @@
 	
 </style>
 <body>
-
+   <?php
+      // Check if the user has logged in or not
+      if($_SESSION["email"]){
+   ?>
       <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
          <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -204,5 +212,13 @@
       </div>
      
    </div>
+   
+   <?php
+      // If not please go back to the log in please...
+      }
+      else{
+         header("Location: ../sign_up_in/Login.php");
+      }
+   ?>
 </body>
 </html>
