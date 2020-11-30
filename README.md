@@ -11,7 +11,7 @@
 
 ## Project backlog
 
-- [ ] Login - Logout - Signup - Forgot password
+- [x] Login - Logout - Signup - Forgot password
   - [x] Login
   - [x] Signup
   - [x] Forgot password 
