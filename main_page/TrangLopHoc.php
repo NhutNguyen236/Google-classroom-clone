@@ -91,7 +91,7 @@
              <div class="dropdown-menu dropdown-menu-right" >
                <a class="dropdown-item" href="#">Tài khoản của tôi</a>
                <a class="dropdown-item" href="#">Đăng nhập bằng tài khoản khác</a>
-               <a class="dropdown-item" href="#">Đăng xuất</a>
+               <a class="dropdown-item" href="logout.php">Đăng xuất</a>
              </div>
             </li>
          </ul>
