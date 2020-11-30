@@ -1,7 +1,7 @@
 # WELCOME TO `Google-classroom-clone`
 
 <p align = "center">
-  <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Google_Classroom_icon.svg/1200px-Google_Classroom_icon.svg.png" width = "100" height = "100"/>
+  <img src = "./sign_up_in/image/icon.png" width = "120" height = "100"/>
 </p>
 
 ## Project Description
