@@ -23,6 +23,8 @@
 
 ## Localhost used
 * [XAMPP](https://www.apachefriends.org/download.html) 
+* SQL port: 3308
+* Apache port: 80,443
 
 ## Release day
 2/12/2020 :bicyclist:
