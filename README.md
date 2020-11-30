@@ -14,6 +14,7 @@
 - [x] Login - Logout - Signup - Forgot password
   - [x] Login
   - [x] Signup
+  - [x] Logout
   - [x] Forgot password 
   - [x] Password reset email - But no password update yet
 - [ ] User privileges 
