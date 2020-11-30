@@ -1,26 +1,31 @@
-<?php  
+<?php
     require('connect.php');
     
-    session_start();
-
-    // Assigning POST values to variables.
-    $email = $_POST['uname'];
-    $password = $_POST['psw'];
-
-    if (!empty($email) && !empty($password)){
+    $email = $_POST['uname1'];
+    
+    // Get username for email from db
+    if (!empty($email)){
         // CHECK FOR THE RECORD FROM TABLE
 
-        $sql = "select * from users where email='$email' and password='$password'";
+        $sql = "SELECT `username` FROM `users` WHERE `email`='$email'";
         
         $result = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+        $row = mysqli_fetch_array($result);
         $count = mysqli_num_rows($result);
 
         if ($count == 1){
-            $_SESSION["email"] = $email;
             //echo "Login Credentials verified";
-            if(isset($_SESSION["email"])){
-                header("Location: ../main_page/TrangLopHoc.php");
-            }
+            $to       = $email;
+            $subject  = "Reset password for $row[0]";
+            $message  = 'Hey, this is a test mail from myself';
+            $headers  = 'From: nhutnguyenf330@gmail.com' . "\r\n" .
+                        'MIME-Version: 1.0' . "\r\n" .
+                        'Content-type: text/html; charset=utf-8';
+
+            if(mail($to, $subject, $message, $headers))
+                echo "Email sent";
+            else
+                echo "Email sending failed";
         }
 
         else{

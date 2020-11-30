@@ -1,3 +1,9 @@
+<?php
+    //Session to refuse if login was already performed
+    session_start();
+    if(!isset($_SESSION['email'])){
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -100,5 +106,12 @@
     </div>
 </div>  
 
+<?php
+    // Else session is set so move on
+    }
+    else{
+        header("Location: ../main_page/TrangLopHoc.php");
+    }
+?>
 </body>
 </html>
