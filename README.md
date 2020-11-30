@@ -14,7 +14,7 @@
 - [ ] Login - Logout - Signup - Forgot password
   - [x] Login
   - [x] Signup
-  - [] Forgot password
+  - [ ] Forgot password
 - [ ] User privileges 
   - [ ] Admin
   - [ ] Teacher
