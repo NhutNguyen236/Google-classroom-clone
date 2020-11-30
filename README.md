@@ -11,15 +11,38 @@
 
 ## Project backlog
 
-- [ ] Mercury
-- [x] Venus
-- [x] Earth (Orbit/Moon)
-- [x] Mars
-- [ ] Jupiter
-- [ ] Saturn
-- [ ] Uranus
-- [ ] Neptune
-- [ ] Comet Haley
+- [ ] Login - Logout - Signup - Forgot password
+  - [x] Login
+  - [x] Signup
+  - [] Forgot password
+- [ ] User privileges 
+  - [] Admin
+  - [] Teacher
+  - [] Student
+- [ ] Classroom interaction
+  - [] Create classs
+  - [] Delete class
+  - [] Edit class
+  - [] Search class
+- [ ] Classroom management
+  - [] For teachers
+    - [] View Student list
+    - [] Add students
+    - [] Remove students
+    - [] Post News, documents, images
+    - [] Remove News, documents, images
+    - [] Comment on news
+    - [] Delete comments
+    - [] Create assignments
+  - [] Fo students
+    - [] Join class using class code
+    - [] View class list
+    - [] View news
+    - [] Download images
+    - [] Download documents
+    - [] Comment on news
+- [] Responsive web design
+- [] Email notification, Password hashing
 
 ## Localhost used
 * [XAMPP](https://www.apachefriends.org/download.html) 
