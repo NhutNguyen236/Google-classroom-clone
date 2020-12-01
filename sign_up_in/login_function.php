@@ -10,17 +10,24 @@
     if (!empty($email) && !empty($password)){
         // CHECK FOR THE RECORD FROM TABLE
 
-        $sql = "select * from users where email='$email' and password='$password'";
+        $sql = "select `email`, `password`, `role` from users where email='$email' and password='$password'";
         
         $result = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+        $row = mysqli_fetch_array($result);
         $count = mysqli_num_rows($result);
 
         if ($count == 1){
+            $_SESSION["role"] = $row[2];
             $_SESSION["email"] = $email;
-            //echo "Login Credentials verified";
-            if(isset($_SESSION["email"])){
+
+            if($_SESSION["role"] == 1 && isset($_SESSION["email"])){
                 header("Location: ../main_page/TrangLopHoc.php");
             }
+
+            else if($_SESSION["role"] == 2 && isset($_SESSION["email"])){
+                header("Location: ../Trang_giao_vien/TrangNguoiDung.php");
+            }
+            //echo "Login Credentials verified";
         }
 
         else{
