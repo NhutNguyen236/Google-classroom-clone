@@ -19,8 +19,8 @@
   - [x] Password reset email - But no password update yet
 - [ ] User privileges 
   - [ ] Admin
-  - [ ] Teacher
-  - [ ] Student
+  - [x] Teacher
+  - [x] Student
 - [ ] Classroom interaction
   - [ ] Create classs
   - [ ] Delete class
