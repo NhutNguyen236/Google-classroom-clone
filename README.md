@@ -17,14 +17,15 @@
   - [x] Logout
   - [x] Forgot password 
   - [x] Password reset email - But no password update yet
+  - [ ] Reset mail with update password in DB
 - [ ] User privileges 
   - [ ] Admin
   - [x] Teacher
   - [x] Student
 - [ ] Classroom interaction
-  - [ ] Create classs
-  - [ ] Delete class
-  - [ ] Edit class
+  - [x] Create classs
+  - [x] Delete class
+  - [x] Edit class
   - [ ] Search class
 - [ ] Classroom management
   - [ ] For teachers
