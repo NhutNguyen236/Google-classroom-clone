@@ -16,7 +16,7 @@
   - [x] Signup
   - [x] Logout
   - [x] Forgot password 
-  - [ ] Reset mail with update password in DB
+  - [x] Reset mail with update password in DB
 - [ ] User privileges 
   - [ ] Admin
   - [x] Teacher
