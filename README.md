@@ -43,7 +43,7 @@
     - [ ] Download images
     - [ ] Download documents
     - [ ] Comment on news
-- [ ] Responsive web design
+- [x] Responsive web design
 - [ ] Email notification, Password hashing
 
 ## Localhost used
