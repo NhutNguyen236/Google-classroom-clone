@@ -16,7 +16,6 @@
   - [x] Signup
   - [x] Logout
   - [x] Forgot password 
-  - [x] Password reset email - But no password update yet
   - [ ] Reset mail with update password in DB
 - [ ] User privileges 
   - [ ] Admin
