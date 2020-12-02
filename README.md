@@ -36,7 +36,7 @@
     - [ ] Comment on news
     - [ ] Delete comments
     - [ ] Create assignments
-  - [ ] Fo students
+  - [ ] For students
     - [ ] Join class using class code
     - [ ] View class list
     - [ ] View news
