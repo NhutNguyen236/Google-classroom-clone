@@ -17,8 +17,8 @@
   - [x] Logout
   - [x] Forgot password 
   - [x] Reset mail with update password in DB
-- [ ] User privileges 
-  - [ ] Admin
+- [x] User privileges 
+  - [x] Admin
   - [x] Teacher
   - [x] Student
 - [ ] Classroom interaction
