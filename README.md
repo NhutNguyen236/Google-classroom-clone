@@ -16,7 +16,7 @@
   - [x] Signup
   - [x] Logout
   - [x] Forgot password 
-  - [x] Reset mail with update password in DB
+  - [x] Password reset email - But no password update yet
 - [x] User privileges 
   - [x] Admin
   - [x] Teacher
@@ -31,9 +31,9 @@
     - [ ] View Student list
     - [ ] Add students
     - [ ] Remove students
-    - [ ] Post News, documents, images
-    - [ ] Remove News, documents, images
-    - [ ] Comment on news
+    - [x] Post News, documents, images
+    - [x] Remove News, documents, images
+    - [] Comment on news
     - [ ] Delete comments
     - [ ] Create assignments
   - [ ] For students
@@ -44,7 +44,7 @@
     - [ ] Download documents
     - [ ] Comment on news
 - [x] Responsive web design
-- [ ] Email notification, Password hashing
+- [] Email notification, Password hashing
 
 ## Localhost used
 * [XAMPP](https://www.apachefriends.org/download.html) 

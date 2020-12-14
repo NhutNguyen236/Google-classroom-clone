@@ -49,7 +49,7 @@
             </div>
     
             <div class="container" >
-                <span class="psw"> <a href="ForgotPassword.html">Quên mật khẩu!</a></span>
+                <span class="psw"> <a href="ForgotPassword.php">Quên mật khẩu!</a></span>
             </div>
         </form>
 
@@ -71,7 +71,7 @@
                     <input type="password" placeholder="Hãy nhập mật khẩu" name="psw1" required>
         
                     <label for="name"><b>Họ và tên</b></label>
-                    <input type="text" placeholder="Nhập họ và tên" name="fullname" required>
+                    <input value= "<?php echo $fullname ?>" type="text" placeholder="Nhập họ và tên" id="fullname" name="fullname" required>
                     
                     <div>
                         <label for="birthdate"><b>Ngày sinh</b></label><br>
@@ -109,8 +109,16 @@
 <?php
     // Else session is set so move on
     }
-    else{
+    else if($_SESSION["role"] == 1 && isset($_SESSION["email"])){
         header("Location: ../main_page/TrangLopHoc.php");
+    }
+
+    else if($_SESSION["role"] == 2 && isset($_SESSION["email"])){
+        header("Location: ../Trang_giao_vien/TrangNguoiDung.php");
+    }
+
+    else if($_SESSION["role"] == 3 && isset($_SESSION["email"])){
+        header("Location: ../Trang_admin/TrangAdmin.php");
     }
 ?>
 </body>

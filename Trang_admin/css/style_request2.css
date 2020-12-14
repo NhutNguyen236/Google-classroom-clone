@@ -136,7 +136,11 @@ color: white;
     width: 35%; /* Could be more or less, depending on screen size */
   }
   /* Nội dung from Tạo lớp học*/
+  .btn_CreateClass{
+    padding: 10px 20px;
+    border:none;
 
+  }
   .cancelbtn {
     padding: 10px 20px;
     background-color: #f44336;
@@ -156,5 +160,3 @@ color: white;
   .iConDropdown{
     margin-left: 20px;
   }
-  
-  

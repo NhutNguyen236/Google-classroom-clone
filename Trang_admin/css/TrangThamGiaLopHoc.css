@@ -1,0 +1,56 @@
+/* Đây là css chứa 2 form chính*/ 
+.form{
+    margin: auto;
+    width:40%;
+    border: 1px solid silver;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+
+}
+/* Form Hướng dẫn đăng nhập bằng mã*/
+.form1{
+    margin: auto;
+    width:40%;
+    border: 0px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+}
+.item_form1{
+    padding: 10px;
+}
+.account{
+    font-size: 40px;
+}
+#btn_changeAcc{
+    border: 1px solid silver;
+    margin-left: 200px;
+    border-radius: 3px;
+    color:rgb(38, 174, 228);
+    background-color: white;
+}
+#btn_changeAcc:hover{
+  background-color: rgb(232, 240, 243);
+}
+#btn_Thamgia{
+    border: 1px solid silver;
+    border-radius: 3px;
+    color: silver;
+    background-color: white;
+    font-size: 20px;
+}
+#btn_Thamgia:hover{
+   color:black;
+   background-color: rgb(163, 162, 161);
+}
+#code_Class{
+    width:200px;
+    height: 50px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    padding: 10px;
+}
+h5{
+    color:rgb(65, 61, 61);
+}

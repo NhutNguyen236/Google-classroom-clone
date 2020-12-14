@@ -17,7 +17,18 @@
             //echo "Login Credentials verified";
             $to       = $email;
             $subject  = "Reset password for $row[0]";
-            $message  = 'Hey, this is a test mail from myself';
+            $message  = "
+            <html>
+            <body>
+                <div>
+                    <p>Please click the link below to reset your password</p>
+                </div>
+                <div>
+                    <a href = \"http://localhost:88/Google-classroom-clone-1/sign_up_in/ChangePassword.php\">Click here to reset your password</a>
+                </div>
+            </body>
+            </html>
+            ";
             $headers  = 'From: nhutnguyenf330@gmail.com' . "\r\n" .
                         'MIME-Version: 1.0' . "\r\n" .
                         'Content-type: text/html; charset=utf-8';

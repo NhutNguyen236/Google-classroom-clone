@@ -35,7 +35,7 @@
         VALUES (NULL, '$username', '$password', '$fullname', '$birth', '$email', '$phone', '$role');";
                 
         if($connection->query($sql) === true){
-            echo "User added";
+            echo "User added, please come back";
         }
         else{
             echo "Error: " . $sql . "<br>" . $connection->error;
