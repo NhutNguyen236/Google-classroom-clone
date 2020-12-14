@@ -33,7 +33,7 @@
     - [ ] Remove students
     - [x] Post News, documents, images
     - [x] Remove News, documents, images
-    - [] Comment on news
+    - [ ] Comment on news
     - [ ] Delete comments
     - [ ] Create assignments
   - [ ] For students
@@ -44,7 +44,7 @@
     - [ ] Download documents
     - [ ] Comment on news
 - [x] Responsive web design
-- [] Email notification, Password hashing
+- [ ] Email notification, Password hashing
 
 ## Localhost used
 * [XAMPP](https://www.apachefriends.org/download.html) 
