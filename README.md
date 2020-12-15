@@ -43,6 +43,17 @@
     - [ ] Download images
     - [ ] Download documents
     - [ ] Comment on news
+- [ ] Admin control
+  - [x] Add users
+  - [x] Delete users
+  - [x] Pivilege assignment
+  - [ ] Update users 
+  - [ ] Add classs
+  - [ ] Delete classes
+  - [ ] Update classes
+  - [ ] Add posts
+  - [ ] Delete posts
+  - [ ] Update posts
 - [x] Responsive web design
 - [ ] Email notification, Password hashing
 
