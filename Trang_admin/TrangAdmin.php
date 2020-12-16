@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="./css/style_request2.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
+    <link rel="stylesheet" href="./css/style_request2.css"/>
+    <link rel="stylesheet" href="./css/table.css"/>
+    <link rel="stylesheet" href="./css/TrangThamGiaLopHoc.css"/>
     <script src="./js/Collapse_sidebar.js"></script>
-    <link rel="stylesheet" href="./css/TrangThamGiaLopHoc.css">
-    
 
     <title>Admin Panel</title>
     
@@ -25,58 +25,77 @@
                  <button type="button" class="close " data-dismiss="modal" aria-label="Close">
                      <span style="font-size: 1.8em;" aria-hidden="true">&times;</span>
                  </button>
-                 <a class= "navbar-brand" href=""> Tham gia lớp học</a>
+                 <a class= "navbar-brand" href=""> Thêm user vào hệ thống</a>
                
-                <ul class="navbar-nav ml-auto">
-                    <button id="btn_Thamgia">Tham gia</button>
-                </ul>
             </nav>
            </div>
            <div class="modal-body">
              
-            <div class="form ">
+            <div class="form">
                 <div class="item_form1">
-                    <p>
-                        Bạn đăng nhập bằng tài khoản
-                    </p>
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-circle account" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
-                        <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                        <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
-                    </svg>
-                    <span><b>Thành Dương</b></span>
-                    <button id="btn_changeAcc" ><b>Chuyển đổi tài khoản</b> </button>
+                    
+                    <form method="post" action = "ThemUser.php">
+                        <div class="container">
+                            <h2>Be wise when you invite someone in</h2> 
+                            <div>
+                                <label for="username"><b>Username</b></label>
+                                <input type="text" name="username" required>
+                            </div>                
+                            
+                            <div>
+                                <label for="uname1"><b>Email</b></label>
+                                <input type="text" name="uname1" required>
+                            </div>
+                            
+                            <div>
+                                <label for="psw1"><b>Mật khẩu</b></label>
+                                <input type="password" placeholder="Hãy nhập mật khẩu" name="psw1" required>
+                            </div>
+                            
+                            <div>
+                                <label for="name"><b>Họ và tên</b></label>
+                                <input value= "<?php echo $fullname ?>" type="text" placeholder="Nhập họ và tên" id="fullname" name="fullname" required>
+                            </div>    
+                            
+                            <div>
+                                <label for="birthdate"><b>Ngày sinh</b></label><br>
+                                <input type="date" name = "birthday">
+                            </div>
+                            
+                            <div>
+                                <label for="PhoneNumber"><b>Số điện thoại</b></label>
+                                <input type="text" placeholder="Nhập số điện thoại" name="PhoneNumber" required>
+                            </div>
+                            
+                            <div>
+                                <label for="role"><b>Vai trò của bạn là</b></label>
+                            </div>                    
+
+                            <div class="form-check form-check-inline">
+                                <input type="radio" name="role" value = "1"> Học sinh
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input type="radio" name="role" value = "2"> Giáo viên
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input type="radio" name="role" value = "3"> Ủy quyền Admin
+                            </div>
+                            
+                            <!--Khi nhấn nút cancel thì đóng form đăng ký lại-->
+                        <div class="clearfix">
+                            
+                            <button type="submit" class= "btnOnClick btn btn-primary btn-lg btn-block">Add</button>
+                            
+                        </div>
+                            
+                
+                        </div>
+                    </form>
         
                 </div>
                
-            </div>
- 
-             <div class="form">
-                <div class="item_form2">
-                    <h5>Mã lớp</h5>
-                    <p>Đề nghị giáo viên của bạn cung cấp mã lớp rồi nhập mã
-                        vào đây
-                    </p>
-                        <form action="">
-                            <input id="code_Class" type="text" placeholder="Mã lớp" name="code_Class" required>
-                        </form>
-                </div>
-            </div>
-            <div class="form1">
-                <div class="text_suggestions">
-                    <p><b>Cách đăng nhập bằng mã lớp học</b></p>
-                    <li>
-                        Sử dụng tài khoản được cấp phép
-                    </li>
-                    <li>
-                        Sử dụng mã lớp học gồm 5-7 chữ cái hoặc số, không có
-                        dấu hoặc ký hiệu
-                    </li>
-                    <p>Nếu bạn đang gặp vấn đề khi tham gia lớp học
-                        , hãy liên hệ giáo viên tạo lớp học
-                    </p>
-                </div>
-        
             </div>
            </div>
        </div>
@@ -142,10 +161,7 @@
                         <a id="modalActivate"  data-toggle="modal" data-target="#ModalJoinClass" href="" class="dropdown-item" href="#">Thêm user</a>
                         
                         <a onclick= "document.getElementById('id01').style.display='block'"
-                        style="width:100%;" class="dropdown-item" href="#">Thêm lớp học</a>
-
-                        <a onclick= "document.getElementById('id01').style.display='block'"
-                        style="width:100%;" class="dropdown-item" href="#">Thêm comment</a>
+                        style="width:100%;" class="dropdown-item" href="#">Phân quyền user</a>
                     </div>
                 </li>
             </ul>
@@ -171,61 +187,61 @@
     <?php require_once("connect.php");?>
 
     <?php
-        $sql = "SELECT * FROM users";
-        $query = mysqli_query($connection,$sql);
+        $sql = 'SELECT * FROM `users`';
+        $result = $connection->query($sql) or die(mysqli_error($connection));
     ?>
 
-    <!-- Xóa người dùng -->
-    <?php
-        if (isset($_GET["id_delete"])) {
-            $sql = "DELETE FROM users WHERE id = ".$_GET["id_delete"];
-            mysqli_query($connection,$sql);
-            header('Location: quan-ly-thanh-vien.php');
-        }
-        
-    ?>
+    <!--SQL Table read-->
+    <section>
+        <table>
+            <tr>
+                <th>User ID</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Fullname</th>
+                <th>Birthdate</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Role</th>
+                <th>Admin Action</th>
+            </tr>
 
+            <?php
+                while($row = $result->fetch_assoc()){
+            ?>        
+            <tr>
+                <td><?php echo $row['user_id'];?></td>
+                <td><?php echo $row['username'];?></td>
+                <td><?php echo $row['password'];?></td>
+                <td><?php echo $row['fullname'];?></td>
+                <td><?php echo $row['birthdate'];?></td>
+                <td><?php echo $row['email'];?></td>
+                <td><?php echo $row['phone'];?></td>
+                <td>
+                    <?php 
+                        if($row['role'] == 1){
+                            echo 'Student';
+                        }
+                        else if($row['role'] == 2){
+                            echo 'Teacher';
+                        }
+                        else{
+                            echo 'Admin';
+                        }
+                    ?>
+                </td>
+                <td>
+                    <a href="UpdateUser.php?id=<?php echo $row['user_id'];?> && username=<?php echo $row['username'];?> && password=<?php echo $row['password'];?> && fullname=<?php echo $row['fullname'];?> && birthdate=<?php echo $row['birthdate'];?> && email=<?php echo $row['email'];?> && phone=<?php echo $row['phone'];?> && role=<?php echo $row['role']?>">Update</a>
+                    <a href="XoaUser.php?id_delete=<?php echo $row['user_id'];?> && username=<?php echo $row['username'];?>">Delete</a>
+                </td>
+            </tr>
 
-    <table class="member_table" >
-    <thead>
-        <tr >
-            <td>ID</td>
-            <td>Username</td>
-            <td>Phone</td>
-            <td>Email</td>
-            <td>Khóa tài khoản</td>
-            <td>Quyền</td>
-            <td>Pass</td>
-            <td>Hành động</td>
-            
-        <tr>
-    </thead>
-    <tbody>
-
-    <?php 
-        while ( $data = mysqli_fetch_array($query) ) {
-            $i = 1;
-            $id = $data['user_id'];
-    ?>
-
-        <tr>
-            <td><?php echo $id; ?></td>
-            <td><?php echo $data['username']; ?></td>
-            <td><?php echo $data['phone']; ?></td>
-            <td><?php echo $data['email']; ?></td>
-            <td><?php echo ($data['is_block'] == 1) ? "Bị khóa" : "Không bị khóa"; ?></td>
-            <td><?php echo ($data['permision'] == 0) ? "Thành viên thường" : "Admin"; ?></td>
-            <td><?php echo $data['password']; ?></td>
-            
-            <td>
-                <a href="chinh-sua-thanh-vien.php?id=<?php echo $id;?> " >Sửa</a>
-                <a href="index.php?id_delete=<?php echo $id;?>">Xóa</a>
-            </td>
-        </tr>
-    <?php 
-            $i++;
-        }
-    ?>
+            <?php
+                }
+            ?>
+        </table>
+    </section>
+    
 
 
 </body>
