@@ -46,6 +46,10 @@
 - [x] Responsive web design
 - [] Email notification, Password hashing
 
+## Change logs: 
+  - There are some minor errors in `TrangNguoiDung.php` from `Trang_giao_vien` folder:
+    - Fix `delete_posts.php` when it cannot return to the right class id
+    
 ## Localhost used
 * [XAMPP](https://www.apachefriends.org/download.html) 
 * SQL port: 3308
