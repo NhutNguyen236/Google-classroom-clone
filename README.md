@@ -32,7 +32,7 @@
     - [ ] Remove students
     - [x] Post News, documents, images
     - [x] Remove News, documents, images
-    - [] Comment on news
+    - [ ] Comment on news
     - [ ] Delete comments
     - [ ] Create assignments
   - [ ] For students
