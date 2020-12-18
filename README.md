@@ -48,6 +48,7 @@
 ## Change logs: 
   - There are some minor errors in `TrangNguoiDung.php` from `Trang_giao_vien` folder:
     - Fix `delete_posts.php` when it cannot return to the right class id
+  - Added function shortening the `class_name` by string... when the length is bigger than 20
     
 ## Localhost used
 * [XAMPP](https://www.apachefriends.org/download.html) 
