@@ -16,6 +16,7 @@
   - [x] Signup
   - [x] Logout
   - [x] Forgot password 
+  - [ ] Email verification
 - [x] User privileges 
   - [x] Admin
   - [x] Teacher
@@ -50,6 +51,7 @@
     - Fix `delete_posts.php` when it cannot return to the right class id
   - Added function shortening the `class_name` by string... when the length is bigger than 20
   - Delete classes got problems with foreign key from `posts` table in the database so we have to truncate everything in `posts` which has selected `class_id`
+  - Change class card content - Replace Class code with teacher name
     
 ## Localhost used
 * [XAMPP](https://www.apachefriends.org/download.html) 
