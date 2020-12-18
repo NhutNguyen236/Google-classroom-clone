@@ -16,7 +16,6 @@
   - [x] Signup
   - [x] Logout
   - [x] Forgot password 
-  - [x] Password reset email - But no password update yet
 - [x] User privileges 
   - [x] Admin
   - [x] Teacher
