@@ -18,7 +18,7 @@
                 $id = "";
                 $class_name="";
                 $class_title="";
-                $class_code="";
+                $lecturer="";
 
                 if (isset($_GET["id"])){
                     $id = $_GET["id"];
@@ -29,7 +29,7 @@
                     $row= $result->fetch_assoc();
                     $class_name= $row["class_name"];
                     $class_title= $row["class_title"];
-                    $class_code= $row["class_code"];
+                    $lecturer= $row["lecturer"];
                 }
                 ?>  
                     <input type="hidden" name="id" value="<?php echo $id ?>">
@@ -49,9 +49,9 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                    <label for="class_code"><b>Phòng</b></label>
+                    <label for="class_code"><b>Người dạy</b></label>
                         <div class="input-group">
-                        <input value= "<?php echo $class_code ?>" type="text" class="form-control" id="class_code" placeholder="Phòng" name="class_code" required>
+                        <input value= "<?php echo $lecturer ?>" type="text" class="form-control" id="class_code" placeholder="Người dạy" name="lecturer" required>
                         </div>
                     </div>
 

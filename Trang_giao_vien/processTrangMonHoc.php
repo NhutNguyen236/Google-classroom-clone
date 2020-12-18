@@ -1,21 +1,18 @@
-<?php
-   $post_content = $_POST["post_content"];
+<?php   
+    $post_content = $_POST["post_content"];
+    $class_id = $_GET["class_id"];
 
-   require "connect.php";
+    require "connect.php";
 
-   if (empty($_POST["id"])){
-       $stmt = $connection->prepare("INSERT INTO posts(post_content) VALUES (?)");
-   }else{
-      $id = $_POST["id"];
-      $stmt = $connection->prepare("UPDATE posts SET post_content=? WHERE id = $id");
-   }
-      $stmt->bind_param("s", $post_content);
+    $message = "";
 
-      if ($stmt->execute() === TRUE)
-      {
-         header("Location: TrangMonHoc.php");
-
-      } else{
-         echo "Error: " .$sql . "<br>" . $connection->error;
-      }
+    $sql = "INSERT INTO `posts` (`id`, `post_content`, `class_id`) VALUES (NULL, '$post_content', $class_id);";
+            
+    if($connection->query($sql) === true){
+        header("Location: TrangmonHoc.php?id=$class_id");
+    }
+    else{
+        echo "Error: " . $sql . "<br>" . $connection->error;
+        $connection->close();
+    }
 ?>

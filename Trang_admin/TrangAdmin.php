@@ -161,7 +161,7 @@
                         <a id="modalActivate"  data-toggle="modal" data-target="#ModalJoinClass" href="" class="dropdown-item" href="#">Thêm user</a>
                         
                         <a onclick= "document.getElementById('id01').style.display='block'"
-                        style="width:100%;" class="dropdown-item" href="#">Phân quyền user</a>
+                        style="width:100%;" class="dropdown-item" href="PhanQuyenuser.php">Phân quyền user</a>
                     </div>
                 </li>
             </ul>

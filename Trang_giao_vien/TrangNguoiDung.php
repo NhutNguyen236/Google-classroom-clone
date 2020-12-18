@@ -184,14 +184,23 @@
                         <div class="card-header">
                             <h4 ass="card-title ">
                             <a href="Trangmonhoc.php?id=<?php echo $row["id"]?>">
-                            <h5 class="card-title text- dark">
-                                 <?php echo $row["class_name"]?></h5></a>                               
+                                <h5 class="card-title text- dark">
+                                    <?php 
+                                        if (strlen($row["class_name"]) >= 20) {
+                                            echo mb_substr($row["class_name"], 0, 15,'UTF-8'). " ... ";
+                                        }
+                                        else {
+                                            echo $row["class_name"];
+                                        }                                
+                                    ?>
+                                </h5>
+                            </a>                               
                             </h4>
                         </div>                 
                         <div class="card-body">
                            <h5 class="card-title">Chủ đề <?php echo $row["class_title"]?></h5>
                            <p class="card-text">
-                              Phòng học <?php echo $row["class_code"] ?>
+                              Người dạy <?php echo $row["lecturer"]; ?>
                            </p>
                         </div>
                         <div class= "card-footer">

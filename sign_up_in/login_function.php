@@ -10,7 +10,7 @@
     if (!empty($email) && !empty($password)){
         // CHECK FOR THE RECORD FROM TABLE
 
-        $sql = "select `email`, `password`, `role` from users where email='$email' and password='$password'";
+        $sql = "select `email`, `password`, `role` from users where email='$email' and password='$password';";
         
         $result = mysqli_query($connection, $sql) or die(mysqli_error($connection));
         $row = mysqli_fetch_array($result);

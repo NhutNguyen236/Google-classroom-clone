@@ -28,9 +28,9 @@
                  <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
                </svg> </button>  
            </div>
-           <a class="navbar-brand" href="#">
+           <a class="navbar-brand" href="TrangNguoiDung.php">
               <img src="./image/TDT_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-              Tôn Đức Thắng University
+              Google Classroom Clone
            </a>
               <div class="topnav">
                 <a class="nav-item " href="#news">Bài tập trên lớp</a>
@@ -61,17 +61,18 @@
       <div class="container">
             <div class = "row"> 
                         <div class="card mb-3">
-                           <img class="card-img" src="a3.jpg" alt="">
+                           <img class="card-img" src="./image/a3.jpg" alt="">
                            <div class="card-img-overlay">
                               <h2 class="card-title text-light"></h2>
                               <p class="card-text text-light">
                                
                               </p>
                               <?php
+                                 // TRang người dùng chưa pas ID vi nó ko hiểu cái $_GET['id']; lấy từ đâu?
                                  $class_id = $_GET['id'];
                                  require('connect.php');
 
-                                 $sql = "SELECT `class_name` from `classes` where `id` = '$class_id'";
+                                 $sql = "SELECT class_name from classes where `id` = '$class_id'";
       
                                  $result = mysqli_query($connection, $sql) or die(mysqli_error($connection));
                                  $row = mysqli_fetch_array($result);
@@ -81,7 +82,7 @@
                            </div>
                         </div>
             </div>
-            <form class="" action="processTrangMonHoc.php" method="POST" enctype="multipart/form-data">
+            <form class="" action="processTrangMonHoc.php?class_id=<?php echo $_GET["id"];?>" method="POST" enctype="multipart/form-data">
                   <?php
                   $id="";
                   $post_content="";
@@ -89,12 +90,12 @@
                   if (isset($_GET["id"])){
                      $id = $_GET["id"];
                      require "connect.php";
-                     $sql = "SELECT * FROM posts WHERE id= '$id'";
-                     $result = $connection->query($sql);
+                     $sql = "SELECT * FROM `posts` WHERE id = '$id';";
+                     $result = $connection->query($sql) or die($connection->error);
 
+                     //$row= $result->fetch_assoc();
                      $row= $result->fetch_assoc();
-                     $post_content= $row["post_content"];
-                  
+                     $post_content = $row["post_content"];
                   }
                   ?>      
                      <div class="shadow-lg p-3 mb-5 bg-white rounded">
@@ -108,9 +109,13 @@
             </form>    
                      <?php
                         require "connect.php";
-                        $sql = "SELECT * FROM posts";
+                        $sql = "SELECT * FROM `posts` WHERE `class_id` = $id";
                         $result = $connection->query($sql);
-                        while ($row = $result->fetch_assoc())
+                        /*while ($row = $result->fetch_assoc())
+                        {*/
+                           
+                        // Add a if there is no posts related to the class so bring out there is nothing else While
+                        while($row = $result->fetch_assoc())
                         {
                      ?>     
 
@@ -121,7 +126,7 @@
                                  </p>
                                  <p>
                                     <?php echo $row["post_content"] ?>
-                                    <a class="btn_deletePosts" href="delete_posts.php?id=<?php echo $row["id"] ?>" class="delete">Delete</a>
+                                    <a class="btn_deletePosts" href="delete_posts.php?id=<?php echo $row["id"];?> && class_id=<?php echo $_GET['id']?>" class="delete">Delete</a>
                                  </p>
                                 
                               </div>
