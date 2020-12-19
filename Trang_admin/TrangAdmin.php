@@ -1,3 +1,10 @@
+<?php
+    session_start();
+
+    if($_SESSION["email"]){
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -246,3 +253,10 @@
 
 </body>
 </html>
+
+<?php
+    }
+    else{
+        header("Location: ../sign_up_in/Login.php");
+    }
+?>

@@ -72,12 +72,13 @@
                                  $class_id = $_GET['id'];
                                  require('connect.php');
 
-                                 $sql = "SELECT class_name from classes where `id` = '$class_id'";
+                                 $sql = "SELECT `id`, `class_name` from classes where `id` = '$class_id'";
       
                                  $result = mysqli_query($connection, $sql) or die(mysqli_error($connection));
                                  $row = mysqli_fetch_array($result);
 
-                                 echo "<p class=\"card-text text-light\">$row[0]</p>";
+                                 echo "<p class=\"card-text text-light\">$row[1]</p>";
+                                 echo "<p class=\"card-text text-light\">Mã lớp học: $row[0]</p>";
                               ?>
                            </div>
                         </div>

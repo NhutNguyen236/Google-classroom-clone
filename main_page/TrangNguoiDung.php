@@ -1,9 +1,3 @@
-<?php
-    session_start();
-
-    if($_SESSION["email"]){
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,33 +15,6 @@
     <title>Document</title>
     
 </head>
-
-<style>
-    @media screen and (min-width:768px){
-    .col-3item{
-        -ms-flex:0 0 33.3%;
-        flex:0 0 33.3%;
-        max-width:33.3%;
-    }
-    }
-
-    @media screen and (min-width:992px){
-    .col-4item{
-        -ms-flex:0 0 25%;
-        flex:0 0 25%;
-        max-width:25%;
-    }
-    }
-
-    @media screen and (min-width:1200px){
-    .col-xl-5item{
-        -ms-flex:0 0 20%;
-        flex:0 0 20%;
-        max-width:20%;
-    }
-    }
-</style>
-
 <body>
    <!--Modal Tham gia lớp học bằng mã code-->
    <div class="modal fade right" id="ModalJoinClass" tabindex="-1" role="dialog" aria-hidden="true">
@@ -119,7 +86,30 @@
 
 <!-- Modal Tạo lớp học bởi giáo viên-->
 <!-- Form đăng ký sử dụng javascript-->
+<div id = "id01" class= "modal_FormCreateClass">
+   <form class="modal-content1 animate" action="" method="=post">
+       <div class="container">
+           <h1>Tạo lớp học</h1>
+           <label for="name1"><b>Tên lớp học</b></label>
+           <input type="text" placeholder="Tên lớp học (bắt buộc)" name="name1" required>
 
+           <label for="name2"><b>Chủ đề</b></label>
+           <input type="text" placeholder="Chủ đề" name="name2" required>
+
+           <label for="name3"><b>Phòng</b></label>
+           <input type="text" placeholder="Phòng" name="name" required>
+
+           
+           <!--Khi nhấn nút cancel thì đóng form đăng ký lại-->
+       <div class="clearfix">
+           <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+           <button type="submit" class= "btn_CreateClass">Tạo</button>
+           
+       </div>
+           
+
+       </div>
+   </form>
 
 </div>
  
@@ -139,7 +129,7 @@
              </svg> </button>  
          </div>
          <a class="navbar-brand" href="#">
-            <img src="./image/TDT_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            <img src="TDT_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
             Tôn Đức Thắng University
          </a>
 
@@ -151,8 +141,8 @@
                   <div class="dropdown-menu dropdown-menu-right" >
                     <a id="modalActivate"  data-toggle="modal" data-target="#ModalJoinClass" href="" class="dropdown-item" href="#">Tham gia lớp học</a>
                      
-                    <a 
-                    style="width:100%;" class="dropdown-item" href="TaoLopHoc.php">Tạo lớp học</a>
+                    <a onclick= "document.getElementById('id01').style.display='block'"
+                    style="width:100%;" class="dropdown-item" href="#">Tạo lớp học</a>
                   </div>
              </li>
          </ul>
@@ -169,65 +159,11 @@
              <div class="dropdown-menu dropdown-menu-right" >
                <a class="dropdown-item" href="#">Tài khoản của tôi</a>
                <a class="dropdown-item" href="#">Đăng nhập bằng tài khoản khác</a>
-               <a class="dropdown-item" href="logout.php">Đăng xuất</a>
+               <a class="dropdown-item" href="#">Đăng xuất</a>
              </div>
             </li>
          </ul>
       </nav>
 
-      <div class="container-fluid">
-         <div class="content">
-            <div class="row">
-               <?php
-                  require "connect.php";
-                  $sql = "SELECT * FROM classes";
-                  $result = $connection->query($sql);
-                  while ($row = $result->fetch_assoc())
-               {
-               ?>
-                <div class= "col-xl-5item col-4item col-3item col-sm-6 cel">
-                     <div class="card shadow" >
-                        <div class="card-header">
-                            <h4 ass="card-title ">
-                            <a href="Trangmonhoc.php?id=<?php echo $row["id"]?>">
-                                <h5 class="card-title text- dark">
-                                    <?php 
-                                        if (strlen($row["class_name"]) >= 20) {
-                                            echo mb_substr($row["class_name"], 0, 15,'UTF-8'). " ... ";
-                                        }
-                                        else {
-                                            echo $row["class_name"];
-                                        }                                
-                                    ?>
-                                </h5>
-                            </a>                               
-                            </h4>
-                        </div>                 
-                        <div class="card-body">
-                           <h5 class="card-title">Chủ đề <?php echo $row["class_title"]?></h5>
-                           <p class="card-text">
-                              Người dạy <?php echo $row["lecturer"]; ?>
-                           </p>
-                        </div>
-                        <div class= "card-footer">
-                        <a href="TaoLopHoc.php?id=<?php echo $row["id"] ?>" >Edit</a> | <a href="delete_function.php?id=<?php echo $row["id"] ?>" class="delete">Delete</a>                       
-                        
-                       
-                        </div>
-                     </div>
-                </div>
-               <?php
-               }
-               ?>              
-            </div>
-         </div>
-      </div>
 </body>
 </html>
-
-<?php
-    }
-    else{
-        header("Location: ../sign_up_in/Login.php");
-    }
-?>
