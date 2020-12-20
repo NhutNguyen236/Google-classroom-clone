@@ -4,6 +4,7 @@
     session_start();
 
     // Assigning POST values to variables.
+    // Get email and password from login site now pass the user id to get fullname for post 
     $email = $_POST['uname'];
     $password = $_POST['psw'];
 

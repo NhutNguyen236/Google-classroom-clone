@@ -80,7 +80,7 @@
                            </div>
                         </div>
             </div>
-            <form class="" action="processTrangMonHoc.php?class_id=<?php echo $_GET["id"];?>" method="POST" enctype="multipart/form-data">
+            <form class="" action="processTrangMonHoc.php?class_id=<?php echo $_GET['id']?>&&username=<?php echo $_GET['username']?>" method="POST" enctype="multipart/form-data">
                   <?php
                   $id="";
                   $post_content="";
@@ -101,8 +101,8 @@
                               <label for="exampleFormControlTextarea1"></label>
                               <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" 
                               value="<?php echo $post_content ?>" name="post_content" id="post_content" placeholder="Thông báo nội dung nào đó cho lớp học của bạn" ></textarea> 
-                              <input class="form-control-sm"  type="file"/> <button type="submit" class="btn_Post"> Đăng bài</button>
-                              
+                              <input class="form-control-sm"  type="file"/> 
+                              <button type="submit" class="btn_Post"> Đăng bài</button>
                            </div>
                      </div> 
 
@@ -126,10 +126,23 @@
                                     <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                                     <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
                                  </svg>
-                                 Account Post
+                                 <?php
+                                    /** Generally focusing on that getting fullname and passing stuffs*/
+                                    // Get username related to the post
+                                    
+                                    $username = $_GET["username"];
+                                    // get fullname from username to display on post
+                                    $get_fullname = "SELECT `fullname`, `user_id` from `users` where `username` = '$username';";
+                                    $get_fullname_result = mysqli_query($connection, $get_fullname) or die(mysqli_error($connection));
+                                    $get_fullname_fetch = mysqli_fetch_array($get_fullname_result);
+
+                                    // Assign fullname here
+                                    $fullname = $get_fullname_fetch[0];
+                                    echo "<p class = \"d-inline\">$fullname</p>";
+                                 ?>
                                  <p class="p1">
                                     <?php echo $row["post_content"] ?>
-                                    <a class="btn btn-warning" role="button" href="delete_posts.php?id=<?php echo $row["id"];?> && class_id=<?php echo $_GET['id']?>" class="delete">Xóa bài</a>
+                                    <a class="btn btn-warning" role="button" href="delete_posts.php?id=<?php echo $row["id"];?> && class_id=<?php echo $_GET['id']?>&&username=<?php echo $_GET['username'];?>" class="delete">Xóa bài</a>
                                  </p>
                                 <hr>
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

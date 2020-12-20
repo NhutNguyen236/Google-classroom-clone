@@ -175,7 +175,9 @@
                      <div class="card shadow" >
                         <div class="card-header border-secondary">
                             <h4 ass="card-title ">
-                            <a href="Trangmonhoc.php?id=<?php echo $row["id"]?>">
+                                
+                            <!--Passing username to get id from it in the next page-->
+                            <a href="Trangmonhoc.php?id=<?php echo $row["id"]?> && username=<?php echo $_GET["username"]?>">
                                 <h5 class="card-title text-info">
                                     <?php 
                                         if (strlen($row["class_name"]) >= 20) {
@@ -197,7 +199,7 @@
                         </div>
                         <div class= "card-footer border-secondary">
                         <a class="btn btn-secondary"  role="button" href="EditLopHoc.php?id=<?php echo $row['id']?> && class_name=<?php echo $row['class_name']?> && class_title=<?php echo $row['class_title']?> && lecturer=<?php echo $row['lecturer']?>" >Sửa</a> |
-                        <a class="btn btn-danger" role="button" href="delete_function.php?id=<?php echo $row["id"] ?>" class="delete">Xóa</a>                       
+                        <a class="btn btn-danger" role="button" href="delete_function.php?id=<?php echo $row["id"]?>" class="delete">Xóa</a>                       
                         
                        
                         </div>
