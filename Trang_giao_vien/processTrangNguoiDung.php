@@ -1,22 +1,34 @@
 <?php
-   $class_name = $_POST["class_name"];
-   $class_title = $_POST["class_title"];
-   $class_code = $_POST["class_code"];
+    $class_name = $_POST["class_name"];
+    $class_title = $_POST["class_title"];
+    $class_lecturer = $_POST["lecturer"];
 
-   require "connect.php";
-   if (empty($_POST["id"])){
-       $stmt = $connection->prepare("INSERT INTO classes(class_name,class_title,class_code) VALUES (?,?,?)");
-   }else{
-      $id = $_POST["id"];
-      $stmt = $connection->prepare("UPDATE classes SET class_name=?, class_title=?, class_code=? WHERE id = $id");
-   }
-      $stmt->bind_param("sss", $class_name, $class_title, $class_code);
+    require "connect.php";
 
-      if ($stmt->execute() === TRUE)
-      {
-         header("Location: TrangNguoiDung.php");
+    $message = "";
 
-      } else{
-         echo "Error: " .$sql . "<br>" . $connection->error;
-      }
+    // check if class name is here or not so we can add new user with no overlapping situation
+    $class_check_query = "SELECT * FROM `classes` WHERE `class_name`='$class_name' LIMIT 1";
+    $result = mysqli_query($connection, $class_check_query);
+    $class = mysqli_fetch_assoc($result);
+    
+    if (isset($class_name) && $class) { // if user exists
+        if ($class['class_name'] === $class_name) {
+            $message = "Class already exists" ;
+            echo $message;
+        }
+    }
+
+    else{
+        $sql = "INSERT INTO `classes` (`id`, `class_name`, `class_title`,`lecturer`) 
+        VALUES (NULL, '$class_name','$class_title', '$class_lecturer');";
+                
+        if($connection->query($sql) === true){
+            require("TrangNguoiDung.php");
+        }
+        else{
+            echo "Error: " . $sql . "<br>" . $connection->error;
+            $connection->close();
+        }
+    }
 ?>

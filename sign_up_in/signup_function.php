@@ -35,7 +35,35 @@
         VALUES (NULL, '$username', '$password', '$fullname', '$birth', '$email', '$phone', '$role');";
                 
         if($connection->query($sql) === true){
-            echo "User added, please come back";
+
+            //Send mail to verify the account
+            $to       = $email;
+            $subject  = "Mail verification for $username";
+            $message  = "
+            <html>
+            <body>
+                <div>
+                    <h1>
+                        Google classroom Clone with love
+                    </h1>
+                </div>
+                <div>
+                    <p>Please click the link below to reset your password</p>
+                </div>
+                <div>
+                    <a href = \"http://localhost:88/Google-classroom-clone-1/sign_up_in/verify.php?username=$username\">Click here to verify that you are $username</a>
+                </div>
+            </body>
+            </html>
+            ";
+            $headers  = 'From: nhutnguyenf330@gmail.com' . "\r\n" .
+                        'MIME-Version: 1.0' . "\r\n" .
+                        'Content-type: text/html; charset=utf-8';
+
+            if(mail($to, $subject, $message, $headers))
+                echo "User added, please check " . $email . " for verification";
+            else
+                echo "Fail to send email to $email :(";
         }
         else{
             echo "Error: " . $sql . "<br>" . $connection->error;

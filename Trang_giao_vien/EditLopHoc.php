@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="style.css">
  
     
-    <title>Tạo lớp học</title>
+    <title>Chỉnh sửa lớp học</title>
 </head>
 <body>
     <div class="">
-        <form action="processTrangNguoiDung.php" method ="POST" enctype="multipart/form-data">
+        <form action="EditLopHoc_function.php?id=<?php echo $_GET['id']?>" method ="POST" enctype="multipart/form-data">
             <div class="container">
                 <?php
                 $id = "";
@@ -33,11 +33,11 @@
                 }
                 ?>  
                     <input type="hidden" name="id" value="<?php echo $id ?>">
-                    <h1>Tạo lớp học</h1>
+                    <h1>Chỉnh sửa lớp học</h1>
                     <div class="mb-3">
                         <label for="class_name"><b>Tên lớp học</b></label>
                         <div class="input-group">
-                            <input value= "<?php echo $class_name ?>" type="text" class="form-control" id="class_name" placeholder="Tên lớp học (bắt buộc)" name="class_name" required>  
+                            <input value= "<?php echo $_GET['class_name'] ?>" type="text" class="form-control" id="class_name" placeholder="Tên lớp học (bắt buộc)" name="class_name" required>  
                         </div>                
                     </div>
                 
@@ -45,20 +45,20 @@
                     <div class="mb-3">
                         <label for="class_title"><b>Chủ đề</b></label>
                         <div class="input-group">
-                            <input value= "<?php echo $class_title ?>" type="text" class="form-control" id="class_title" placeholder="Chủ đề" name="class_title" required>
+                            <input value= "<?php echo $_GET['class_title'] ?>" type="text" class="form-control" id="class_title" placeholder="Chủ đề" name="class_title" required>
                         </div>
                     </div>
                     <div class="mb-3">
                     <label for="class_code"><b>Người dạy</b></label>
                         <div class="input-group">
-                        <input value= "<?php echo $lecturer ?>" type="text" class="form-control" id="class_code" placeholder="Người dạy" name="lecturer" required>
+                        <input value= "<?php echo $_GET['lecturer'] ?>" type="text" class="form-control" id="class_code" placeholder="Người dạy" name="lecturer" required>
                         </div>
                     </div>
 
                   
              
 
-                    <button class="btn btn-success btn-lg btn-block" type="submit">Tạo</button>                 
+                    <button class="btn btn-success btn-lg btn-block" type="submit">Chỉnh sửa</button>                 
              
             </div>
         </form>

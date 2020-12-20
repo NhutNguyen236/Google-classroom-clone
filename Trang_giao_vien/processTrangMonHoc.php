@@ -1,21 +1,22 @@
-<?php
-   $post_content = $_POST["post_content"];
+<?php   
+    $post_content = $_POST["post_content"];
 
-   require "connect.php";
+    // Fix that single quote by adding slashes to the post_content
+    $new_post_content = addslashes($post_content);
 
-   if (empty($_POST["id"])){
-       $stmt = $connection->prepare("INSERT INTO posts(post_content) VALUES (?)");
-   }else{
-      $id = $_POST["id"];
-      $stmt = $connection->prepare("UPDATE posts SET post_content=? WHERE id = $id");
-   }
-      $stmt->bind_param("s", $post_content);
+    $class_id = $_GET["class_id"];
 
-      if ($stmt->execute() === TRUE)
-      {
-         header("Location: TrangMonHoc.php");
+    require "connect.php";
 
-      } else{
-         echo "Error: " .$sql . "<br>" . $connection->error;
-      }
+    $message = "";
+
+    $sql = "INSERT INTO `posts` (`id`, `post_content`, `class_id`) VALUES (NULL, '$new_post_content', $class_id);";
+            
+    if($connection->query($sql) === true){
+        header("Location: TrangmonHoc.php?id=$class_id");
+    }
+    else{
+        echo "Error: " . $sql . "<br>" . $connection->error;
+        $connection->close();
+    }
 ?>
