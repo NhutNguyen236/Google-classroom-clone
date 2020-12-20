@@ -16,7 +16,7 @@
   - [x] Signup
   - [x] Logout
   - [x] Forgot password 
-  - [x] Password reset email - But no password update yet
+  - [x] Email verification
 - [x] User privileges 
   - [x] Admin
   - [x] Teacher
@@ -33,30 +33,31 @@
     - [ ] Remove students
     - [x] Post News, documents, images
     - [x] Remove News, documents, images
-    - [ ] Comment on news
+    - [x] Comment on news
     - [ ] Delete comments
-    - [ ] Create assignments
+    - [o] Create assignments - *reduced*
+    - [x] View classes list
   - [ ] For students
-    - [ ] Join class using class code
-    - [ ] View class list
-    - [ ] View news
+    - [x] Join class using class code
+    - [x] View class list
+    - [x] View news
     - [ ] Download images
     - [ ] Download documents
-    - [ ] Comment on news
-- [ ] Admin control
-  - [x] Add users
-  - [x] Delete users
-  - [x] Pivilege assignment
-  - [ ] Update users 
-  - [ ] Add classs
-  - [ ] Delete classes
-  - [ ] Update classes
-  - [ ] Add posts
-  - [ ] Delete posts
-  - [ ] Update posts
+    - [x] Comment on news
 - [x] Responsive web design
-- [ ] Email notification, Password hashing
+- [o] Email notification, Password hashing - *reduced*
 
+## Change logs: 
+  - There are some minor errors in `TrangNguoiDung.php` from `Trang_giao_vien` folder:
+    - Fix `delete_posts.php` when it cannot return to the right class id
+  - Added function shortening the `class_name` by string... when the length is bigger than 20
+  - Delete classes got problems with foreign key from `posts` table in the database so we have to truncate everything in `posts` which has selected `class_id`
+  - Change class card content - Replace Class code with teacher name
+  - Added Class code on the header of each class
+  - Added email verification function, now everyone has to verify their account except the administrator
+
+
+    
 ## Localhost used
 * [XAMPP](https://www.apachefriends.org/download.html) 
 * SQL port: 3308
