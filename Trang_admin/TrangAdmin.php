@@ -1,3 +1,10 @@
+<?php
+    session_start();
+
+    if($_SESSION["email"]){
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -161,7 +168,7 @@
                         <a id="modalActivate"  data-toggle="modal" data-target="#ModalJoinClass" href="" class="dropdown-item" href="#">Thêm user</a>
                         
                         <a onclick= "document.getElementById('id01').style.display='block'"
-                        style="width:100%;" class="dropdown-item" href="#">Phân quyền user</a>
+                        style="width:100%;" class="dropdown-item" href="PhanQuyenuser.php">Phân quyền user</a>
                     </div>
                 </li>
             </ul>
@@ -203,6 +210,7 @@
                 <th>Email</th>
                 <th>Phone</th>
                 <th>Role</th>
+                <th>Verification Status</th>
                 <th>Admin Action</th>
             </tr>
 
@@ -231,7 +239,17 @@
                     ?>
                 </td>
                 <td>
-                    <a href="UpdateUser.php?id=<?php echo $row['user_id'];?> && username=<?php echo $row['username'];?> && password=<?php echo $row['password'];?> && fullname=<?php echo $row['fullname'];?> && birthdate=<?php echo $row['birthdate'];?> && email=<?php echo $row['email'];?> && phone=<?php echo $row['phone'];?> && role=<?php echo $row['role']?>">Update</a>
+                <?php 
+                    if($row['status'] == 1){
+                        echo 'Verified';
+                    }
+                    else if($row['status'] == 0){
+                        echo 'Not verified yet';
+                    }
+                ?>  
+                </td>
+                <td>
+                    <a href="UpdateUser.php?id=<?php echo $row['user_id'];?> && username=<?php echo $row['username'];?> && password=<?php echo $row['password'];?> && fullname=<?php echo $row['fullname'];?> && birthdate=<?php echo $row['birthdate'];?> && email=<?php echo $row['email'];?> && phone=<?php echo $row['phone'];?> && role=<?php echo $row['role']?> && status=<?php echo $row['status']?>">Update</a>
                     <a href="XoaUser.php?id_delete=<?php echo $row['user_id'];?> && username=<?php echo $row['username'];?>">Delete</a>
                 </td>
             </tr>
@@ -246,3 +264,10 @@
 
 </body>
 </html>
+
+<?php
+    }
+    else{
+        header("Location: ../sign_up_in/Login.php");
+    }
+?>

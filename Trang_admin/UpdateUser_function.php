@@ -10,6 +10,7 @@
     $email = $_POST['email'];
     $phone = $_POST['PhoneNumber'];
     $role = $_POST['role'];
+    $status = $_POST['status'];
 
     // get id and username using GET
     $id = $_GET['id'];
@@ -20,7 +21,7 @@
 
 
     
-    $sql = "UPDATE `users` SET `user_id`=$userid, `username`='$username', `password`='$password', `fullname`='$fullname', `birthdate`='$birth', `email`='$email', `phone`=$phone, `role`=$role WHERE `user_id`=$id;";
+    $sql = "UPDATE `users` SET `user_id`=$userid, `username`='$username', `password`='$password', `fullname`='$fullname', `birthdate`='$birth', `email`='$email', `phone`=$phone, `role`=$role, `status` = $status WHERE `user_id`=$id;";
             
     if($connection->query($sql) === true){
         echo 

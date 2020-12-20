@@ -62,6 +62,11 @@
                     <label for="PhoneNumber"><b>Số điện thoại</b></label>
                     <input type="text" value = "<?php echo $_GET['phone']?>" name="PhoneNumber" required>
                 </div>
+
+                <div>
+                    <label for="status"><b>Tình trạng xác thực email</b></label>
+                    <input type="text" value = "<?php echo $_GET['status']?>" name="status" required>
+                </div>
                 
                 <div>
                     <label for="role"><b>Vai trò của bạn là</b></label>
