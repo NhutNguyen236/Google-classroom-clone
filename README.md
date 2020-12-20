@@ -55,9 +55,13 @@
   - Change class card content - Replace Class code with teacher name
   - Added Class code on the header of each class
   - Added email verification function, now everyone has to verify their account except the administrator
+  - Fix `edit class` on Teacher side
+  - Add Status control on admin side
+  - Fix username reader for each greeting 
+  - Add `Class control` on admin side, now admin can view `classes` table but still cannot go for other CUD since we just have Read only
+  - Fix appearance of class cards
+  - Add comment input and files input but not functional yet
 
-
-    
 ## Localhost used
 * [XAMPP](https://www.apachefriends.org/download.html) 
 * SQL port: 3308
