@@ -14,12 +14,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
-    <link rel="stylesheet" href="./css/style_request2.css"/>
-    <link rel="stylesheet" href="./css/table.css"/>
-    <link rel="stylesheet" href="./css/TrangThamGiaLopHoc.css"/>
-    <script src="./js/Collapse_sidebar.js"></script>
+    <link rel="stylesheet" href="../css/style_request2.css"/>
+    <link rel="stylesheet" href="../css/table.css"/>
+    <link rel="stylesheet" href="../css/TrangThamGiaLopHoc.css"/>
+    <script src="../js/Collapse_sidebar.js"></script>
 
-    <title>Admin Panel</title>
+    <title>Quan Ly lop hoc</title>
     
 </head>
 <body>
@@ -143,8 +143,8 @@
         <nav class="navbar navbar-expand-sm navbar-dark bg-info">
             <div id="mySidebar" class="sidebar">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-                <a href="TrangAdmin.php">Quản lý Users</a>
-                <a href="./quan_ly_class/QuanLyClass.php">Quản lý Classes</a>
+                <a href="../TrangAdmin.php">Quản lý Users</a>
+                <a href="QuanLyClass.php">Quản lý Classes</a>
                 <a href="QuanLyPost.php">Quản lý Posts</a>
             </div>
             <div id="main">
@@ -154,7 +154,7 @@
                 </svg> </button>  
             </div>
             <a class="navbar-brand" href="#">
-                <img src="image/cap-1.png" width="60" height="35" class="d-inline-block align-top" alt="">
+                <img src="../image/cap-1.png" width="60" height="35" class="d-inline-block align-top" alt="">
                 Admin Panel
             </a>
 
@@ -164,10 +164,10 @@
                     <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
                     </svg></a>
                     <div class="dropdown-menu dropdown-menu-right" >
-                        <a id="modalActivate"  data-toggle="modal" data-target="#ModalJoinClass" href="" class="dropdown-item" href="#">Thêm user</a>
+                        <a id="modalActivate"  data-toggle="modal" data-target="#ModalJoinClass" href="" class="dropdown-item" href="#">Thêm lớp học</a>
                         
                         <a onclick= "document.getElementById('id01').style.display='block'"
-                        style="width:100%;" class="dropdown-item" href="PhanQuyenuser.php">Phân quyền user</a>
+                        style="width:100%;" class="dropdown-item" href="PhanQuyenuser.php">---</a>
                     </div>
                 </li>
             </ul>
@@ -190,10 +190,10 @@
             </ul>
         </nav>
 
-    <?php require_once("connect.php");?>
+    <?php require_once("../connect.php");?>
 
     <?php
-        $sql = 'SELECT * FROM `users`';
+        $sql = 'SELECT * FROM `classes`';
         $result = $connection->query($sql) or die(mysqli_error($connection));
     ?>
 
@@ -201,15 +201,10 @@
     <section>
         <table>
             <tr>
-                <th>User ID</th>
-                <th>Username</th>
-                <th>Password</th>
-                <th>Fullname</th>
-                <th>Birthdate</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Role</th>
-                <th>Verification Status</th>
+                <th>Class ID</th>
+                <th>Class name</th>
+                <th>Class title</th>
+                <th>Lecturer name</th>
                 <th>Admin Action</th>
             </tr>
 
@@ -217,38 +212,12 @@
                 while($row = $result->fetch_assoc()){
             ?>        
             <tr>
-                <td><?php echo $row['user_id'];?></td>
-                <td><?php echo $row['username'];?></td>
-                <td><?php echo $row['password'];?></td>
-                <td><?php echo $row['fullname'];?></td>
-                <td><?php echo $row['birthdate'];?></td>
-                <td><?php echo $row['email'];?></td>
-                <td><?php echo $row['phone'];?></td>
+                <td><?php echo $row['id'];?></td>
+                <td><?php echo $row['class_name'];?></td>
+                <td><?php echo $row['class_title'];?></td>
+                <td><?php echo $row['lecturer'];?></td>
                 <td>
-                    <?php 
-                        if($row['role'] == 1){
-                            echo 'Student';
-                        }
-                        else if($row['role'] == 2){
-                            echo 'Teacher';
-                        }
-                        else{
-                            echo 'Admin';
-                        }
-                    ?>
-                </td>
-                <td>
-                <?php 
-                    if($row['status'] == 1){
-                        echo 'Verified';
-                    }
-                    else if($row['status'] == 0){
-                        echo 'Not verified yet';
-                    }
-                ?>  
-                </td>
-                <td>
-                    <a href="UpdateUser.php?id=<?php echo $row['user_id'];?> && username=<?php echo $row['username'];?> && password=<?php echo $row['password'];?> && fullname=<?php echo $row['fullname'];?> && birthdate=<?php echo $row['birthdate'];?> && email=<?php echo $row['email'];?> && phone=<?php echo $row['phone'];?> && role=<?php echo $row['role']?> && status=<?php echo $row['status']?>">Update</a>
+                    <a href="EditClass.php?id=<?php echo $row['id'];?> && class_name=<?php echo $row['class_name'];?> && class_title=<?php echo $row['class_title'];?> && lecturer=<?php echo $row['lecturer'];?>">Update</a>
                     <a href="XoaUser.php?id_delete=<?php echo $row['user_id'];?> && username=<?php echo $row['username'];?>">Delete</a>
                 </td>
             </tr>

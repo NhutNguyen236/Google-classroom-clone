@@ -27,7 +27,13 @@
     <div class = "item_form1">
         <form method="post" action = "UpdateUser_function.php?id=<?php echo $_GET['id']?>&&username=<?php echo $_GET['username']?>">
             <div class="container item_form1">
-                <h2>Update for <?php echo $_GET['username'];?></h2> 
+                <h2>
+                    Update for 
+                    <?php
+                        $username =  $_GET['username'];
+                        echo "<p class = \"text-success d-inline\">$username</p>";
+                    ?>
+                </h2> 
                 <div>
                     <label for="userid"><b>User ID</b></label>
                     <input type="text" name="userid" value = "<?php echo $_GET['id']?>" required>
