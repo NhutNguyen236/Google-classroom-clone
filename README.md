@@ -28,7 +28,7 @@
   - [ ] Search class
 - [ ] Classroom management
   - [ ] For teachers
-    - [ ] View Student list
+    - [x] View Student list
     - [ ] Add students
     - [ ] Remove students
     - [x] Post News, documents, images
@@ -63,6 +63,8 @@
   - Add comment input and files input but not functional yet
   - Passing `username` among `Trangmonhoc` and its process page
   - Print full name as post owner
+  - Fix lecturer name by getting it displayed by getting fullname from db 
+  - Fix teacher side repeat of classes
 
 ## Localhost used
 * [XAMPP](https://www.apachefriends.org/download.html) 
