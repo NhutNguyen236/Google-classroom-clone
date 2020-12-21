@@ -4,6 +4,7 @@
     session_start();
 
     // Assigning POST values to variables.
+    // Get email and password from login site now pass the user id to get fullname for post 
     $email = $_POST['uname'];
     $password = $_POST['psw'];
 
@@ -14,7 +15,7 @@
 
     if (!empty($email) && !empty($password)){
         // CHECK FOR THE RECORD FROM TABLE
-        $sql = "SELECT `email`, `password`, `role` from users where email='$email' and password='$password';";
+        $sql = "SELECT `user_id`, `email`, `password`, `role` from `users` where email='$email' and password='$password';";
         
         // Check if status is 1 or not then write session if login is successful
         $status_sql = "SELECT `status` from `users` where `email`='$email';";
@@ -31,16 +32,19 @@
         if ($count == 1){
             // If email has been verified
             if($status[0] == 1){
-                $_SESSION["role"] = $row[2];
+                // assign user id to a vsariable
+                $user_id = $row[0];
+
+                $_SESSION["role"] = $row[3];
                 $_SESSION["email"] = $email;
 
                 // Route to page whose role has defined
                 if($_SESSION["role"] == 1 && isset($_SESSION["email"])){
-                    header("Location: ../main_page/TrangNguoiDung.php?username=$get_username_fetch[0]");
+                    header("Location: ../main_page/TrangNguoiDung.php?username=$get_username_fetch[0]&&userid=$user_id");
                 }
     
                 else if($_SESSION["role"] == 2 && isset($_SESSION["email"])){
-                    header("Location: ../Trang_giao_vien/TrangNguoiDung.php?username=$get_username_fetch[0]");
+                    header("Location: ../Trang_giao_vien/TrangNguoiDung.php?username=$get_username_fetch[0]&&userid=$user_id");
                 }
     
                 else if($_SESSION["role"] == 3 && isset($_SESSION["email"])){
