@@ -1,0 +1,50 @@
+.p1 {
+    font-family: "Times New Roman", Times, serif;
+    font-size:15px;
+    
+  }
+  p.c {
+    white-space: pre;
+  }
+hr{
+    background-color: white;
+}
+.form-control{
+    border: 2px inset;
+    border-radius: 10px;
+    
+}
+.auto_height { /* CSS */
+    width: 100%;
+    border: 1px solid;
+    border-radius: 10px;
+  }
+  .textarea-container {
+    position: relative;
+  }
+  .textarea-container textarea {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .textarea-container button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .displaySubject{
+    font-size: 40px;
+   
+  }
+.cardColor_shadow{
+  border: 2px inset;
+  padding: 10px;
+  box-shadow: 5px 10px #EE8C8B;                  
+}
+.card_image{
+  
+  width: 1000px;
+  height: 200px;
+  margin: auto;
+  margin-bottom: 20px;
+ }

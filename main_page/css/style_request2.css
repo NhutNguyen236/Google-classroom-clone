@@ -104,10 +104,10 @@ color: white;
     margin-top: 20px;
   }
   .card-img{
-    
     height: 230px;
     width: 800px;
   }
+  
   input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -135,6 +135,7 @@ color: white;
     border: 1px solid #888;
     width: 35%; /* Could be more or less, depending on screen size */
   }
+  
   /* Nội dung from Tạo lớp học*/
 
   .cancelbtn {

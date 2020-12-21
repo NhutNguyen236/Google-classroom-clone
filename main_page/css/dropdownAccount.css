@@ -1,0 +1,17 @@
+.dropdown-menu1{
+    width: 300px !important;
+    height: 250px !important;
+}
+.iconAccount{
+    width: 50px;
+    height: 100px;
+    margin-left: 125px;
+}
+.textAccount{
+    text-align: center;
+   
+}
+
+.textLogout:hover{
+   background-color: rgb(206, 206, 206);
+}

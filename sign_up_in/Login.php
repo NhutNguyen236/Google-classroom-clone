@@ -110,7 +110,7 @@
     // Else session is set so move on
     }
     else if($_SESSION["role"] == 1 && isset($_SESSION["email"])){
-        header("Location: ../main_page/TrangLopHoc.php");
+        header("Location: ../main_page/TrangNguoiDung.php");
     }
 
     else if($_SESSION["role"] == 2 && isset($_SESSION["email"])){

@@ -85,7 +85,6 @@
         <table>
             <tr>
                 <th>Fullname</th>
-                <th>Action</th>
             </tr>
 
             <?php
@@ -113,11 +112,7 @@
 
                         if($row_fullname[1] == 1){
                     ?>
-                    <a href="XoaHocSinh.php?fullname=<?php echo $row_fullname[0]?>&&student_id=<?php echo $row['user_id'];?>&&id=<?php echo $id?>&&userid=<?php echo $userid?>">Delete</a>
                     <?php
-                        }
-                        else{
-                            echo "----";
                         }
                     ?>
                 </td>
