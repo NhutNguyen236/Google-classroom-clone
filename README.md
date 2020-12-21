@@ -28,7 +28,7 @@
   - [ ] Search class
 - [ ] Classroom management
   - [ ] For teachers
-    - [ ] View Student list
+    - [x] View Student list
     - [ ] Add students
     - [ ] Remove students
     - [x] Post News, documents, images
@@ -61,6 +61,12 @@
   - Add `Class control` on admin side, now admin can view `classes` table but still cannot go for other CUD since we just have Read only
   - Fix appearance of class cards
   - Add comment input and files input but not functional yet
+  - Passing `username` among `Trangmonhoc` and its process page
+  - Print full name as post owner
+  - Fix lecturer name by getting it displayed by getting fullname from db 
+  - Fix teacher side repeat of classes
+  - Fixed some links but not all 
+  - Add class list to teacher side and ready to add it to student side
 
 ## Localhost used
 * [XAMPP](https://www.apachefriends.org/download.html) 
