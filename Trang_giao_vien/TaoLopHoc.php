@@ -12,7 +12,11 @@
 </head>
 <body>
     <div class="">
-        <form action="processTrangNguoiDung.php" method ="POST" enctype="multipart/form-data">
+        <?php
+            // Assign userid
+            $user_id = $_GET['userid'];
+        ?>
+        <form action="processTrangNguoiDung.php?userid=<?php echo $user_id;?>" method ="POST" enctype="multipart/form-data">
             <div class="container">
                 <?php
                 $id = "";
@@ -48,15 +52,6 @@
                             <input value= "<?php echo $class_title ?>" type="text" class="form-control" id="class_title" placeholder="Chủ đề" name="class_title" required>
                         </div>
                     </div>
-                    <div class="mb-3">
-                    <label for="class_code"><b>Người dạy</b></label>
-                        <div class="input-group">
-                        <input value= "<?php echo $lecturer ?>" type="text" class="form-control" id="class_code" placeholder="Người dạy" name="lecturer" required>
-                        </div>
-                    </div>
-
-                  
-             
 
                     <button class="btn btn-success btn-lg btn-block" type="submit">Tạo</button>                 
              

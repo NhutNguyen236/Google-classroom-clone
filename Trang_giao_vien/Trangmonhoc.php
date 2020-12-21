@@ -9,29 +9,23 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./css/style_request2.css">
     <script src="./js/post.js"></script> 
-    <link rel="stylesheet" href="./css/TrangThamGiaLopHoc.css">
     <link rel="stylesheet" href="./css/Trangmonhoc.css">
     <link rel="stylesheet" href="./css/post.css">
     <title>Tôn Đức Thắng University</title>
 </head>
   <body>
      <!--Thanh navbar-->
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-           <div id="mySidebar" class="sidebar">
-              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-              <a href="#">About</a>
-              <a href="#">Services</a>
-              <a href="#">Clients</a>
-              <a href="#">Contact</a>
-           </div>
+     <nav class="navbar navbar-expand-sm navbar-dark bg-info">
+
+       
            
            <a class="navbar-brand" href="TrangNguoiDung.php">
               <img src="./image/TDT_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
               Tôn Đức Thắng University
            </a>
               <div class="topnav">
-                <a class="nav-item " href="#news">Bài tập trên lớp</a>
-                <a href="#contact">Hoạt động</a>
+                <a class="nav-item " href="Trangbaitap.php">Bài tập trên lớp</a>
+                <a href="#contact">Hiện danh sách học sinh</a>
               </div>
         
            <ul class="navbar-nav ml-auto">
@@ -56,9 +50,9 @@
         
         <!--Form comment-->
       <div class="container">
-            <div class = "row"> 
-                        <div class="card mb-3">
-                           <img class="card-img" src="./image/a3.jpg" alt="">
+            <div class = "row  "> 
+                        <div class="card mb-3 card_image"> 
+                           <img class="card-img card_image" src="./image/a5.jpg" alt=""  >
                            <div class="card-img-overlay">
                               <h2 class="card-title text-light"></h2>
                               <p class="card-text text-light">
@@ -73,8 +67,8 @@
       
                                  $result = mysqli_query($connection, $sql) or die(mysqli_error($connection));
                                  $row = mysqli_fetch_array($result);
-
-                                 echo "<p class=\"card-text text-light\">$row[1]</p>";
+                              
+                                 echo "<p class=\"card-text text-light displaySubject \">$row[1]</p>";
                                  echo "<p class=\"card-text text-light\">Mã lớp học: $row[0]</p>";
                               ?>
                            </div>
